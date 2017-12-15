@@ -1,0 +1,28 @@
+{
+  "name": "csthink/cpf",
+  "type": "framework",
+  "description": "CPF Framework",
+  "Keywords": [
+    "PHP framework"
+  ],
+  "homepage": "http://csthink.com",
+  "require": {
+    "filp/whoops": "2.1.2",
+    "symfony/var-dumper": "^3.2",
+    "illuminate/database": "*"
+  },
+  "autoload": {
+    "files": [
+      "cpf/Bootstrap.php"
+    ],
+    "psr-4": {
+      "app\\" : "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Dumingyang",
+      "email": "security.2009@live.cn"
+    }
+  ]
+}

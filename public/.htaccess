@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /macaw
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^.*$ index.php [L]
