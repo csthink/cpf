@@ -14,10 +14,7 @@
   "autoload": {
     "files": [
       "cpf/Bootstrap.php"
-    ],
-    "psr-4": {
-      "app\\" : "app/"
-    }
+    ]
   },
   "authors": [
     {

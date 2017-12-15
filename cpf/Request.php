@@ -66,7 +66,7 @@ class Request
         return array_merge($_GET, $_POST);
     }
 
-    public function getParameter($name)
+    public  function getParameter($name = '')
     {
         if (!isset($this->parameters)) {
             $this->parameters = $this->loadParameters();
