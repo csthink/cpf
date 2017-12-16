@@ -1,0 +1,26 @@
+# ide(sublime & phpstorm project files)
+.idea/
+/.phpstorm.meta.php
+/_ide_helper.php
+/_ide_helper_models.php
+*.sublime-project
+*.sublime-workspace
+
+# windows thumbnail cache
+Thumbs.db
+ehthumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+._.DS_Store
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+/.project
+/.settings
+/composer.lock
+/.buildpath
+/vendor
