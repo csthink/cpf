@@ -7,7 +7,7 @@
 
 namespace app\models;
 
-class User extends BaseModel
+class User extends Base
 {
     /**
      * The table associated with the model.

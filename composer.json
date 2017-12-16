@@ -2,24 +2,18 @@
   "name": "csthink/cpf",
   "type": "framework",
   "description": "CPF Framework",
-  "Keywords": [
-    "PHP framework"
+  "Keywords": ["PHP framework", "Full-Stack"],
+  "homepage": "http://www.csthink.com",
+  "license": "MIT",
+  "authors": [
+    {"name": "Dumingyang", "email": "security.2009@live.cn"}
   ],
-  "homepage": "http://csthink.com",
   "require": {
     "filp/whoops": "2.1.2",
     "symfony/var-dumper": "^3.2",
     "illuminate/database": "*"
   },
   "autoload": {
-    "files": [
-      "cpf/Bootstrap.php"
-    ]
-  },
-  "authors": [
-    {
-      "name": "Dumingyang",
-      "email": "security.2009@live.cn"
-    }
-  ]
+    "files": ["cpf/Bootstrap.php"]
+  }
 }

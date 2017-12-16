@@ -10,7 +10,7 @@ namespace app\models;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Eloquent\Model;
 
-class BaseModel extends Model
+class Base extends Model
 {
     public function __construct(array $attributes = [])
     {
