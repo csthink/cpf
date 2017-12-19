@@ -4,6 +4,7 @@
  * @author: csthink
  * @since: 12/16/2017 4:18 PM
  */
+include 'Functions.php';
 
 final class CPF
 {
