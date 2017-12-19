@@ -7,14 +7,15 @@
 
 namespace app\controllers;
 
-use app\models\User;
+//use app\models\User;
 
-class IndexController
+class IndexController extends Controller
 {
     public function index()
     {
-        $user = new User();
-        p($user->getData());
+//        $user = new User();
+//        p($user->getData());
+//        p($this->request->get('name', 'jack'));
         echo 'welcome to CPF';
     }
 }

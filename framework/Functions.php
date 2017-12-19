@@ -42,16 +42,15 @@ function redirect($str)
 
 /**
  * 自动加载类
- * @param $class
+ * @param $className
+ * @throws Exception
  */
-function cpf_autoload($class)
+function cpf_Autoload($className)
 {
-    $class = str_replace('\\', '/', trim($class, '\\'));
-    if (is_file(CPF_PATH . $class . '.php')) {
-        include_once CPF_PATH . $class . '.php';
+    $fileName = CSTHINK_PATH . str_replace('\\', '/', trim($className, '\\')) . '.php';
+    if (file_exists($fileName)) {
+        require_once $fileName;
     } else {
-        if (is_file(APP_PATH . $class . '.php')) {
-            include_once APP_PATH . $class . '.php';
-        }
+        throw new Exception($fileName . ' is not exist');
     }
 }

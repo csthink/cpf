@@ -22,7 +22,12 @@ require_once(CPF_PATH . 'Functions.php');
 include CPF_PATH . 'CPF.php';
 
 // 注册自动加载
-spl_autoload_register('cpf_autoload');
+spl_autoload_register('cpf_Autoload');
 
 // 运行框架
-\CPF::getInstance()->run();
+try {
+    CPF::getInstance()->run();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+

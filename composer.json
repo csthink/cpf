@@ -12,8 +12,5 @@
     "filp/whoops": "2.1.2",
     "symfony/var-dumper": "^3.2",
     "illuminate/database": "*"
-  },
-  "autoload": {
-    "files": ["cpf/Bootstrap.php"]
   }
 }

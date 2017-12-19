@@ -5,7 +5,7 @@
  * @since: 12/16/2017 4:21 PM
  */
 
-namespace cpf;
+namespace framework;
 
 class Response
 

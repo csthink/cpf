@@ -5,15 +5,15 @@
  * @since: 12/16/2017 4:18 PM
  */
 
-namespace cpf;
+namespace framework;
 
 /**
- * @method static Router get(string $route, Callable $callback)
- * @method static Router post(string $route, Callable $callback)
- * @method static Router put(string $route, Callable $callback)
- * @method static Router delete(string $route, Callable $callback)
- * @method static Router options(string $route, Callable $callback)
- * @method static Router head(string $route, Callable $callback)
+ * @method static CPFRouter get(string $route, Callable $callback)
+ * @method static CPFRouter post(string $route, Callable $callback)
+ * @method static CPFRouter put(string $route, Callable $callback)
+ * @method static CPFRouter delete(string $route, Callable $callback)
+ * @method static CPFRouter options(string $route, Callable $callback)
+ * @method static CPFRouter head(string $route, Callable $callback)
  */
 class Router
 {
@@ -40,7 +40,7 @@ class Router
         self::$errorCallback = $callback;
     }
 
-    public static function dispatch()
+    public function dispatch(\CPF $cpf)
     {
         // 获取当前URI
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -66,7 +66,7 @@ class Router
         }
 
         if ((null != self::$controller) && (null != self::$action)) {
-            $controller = new self::$controller();
+            $controller = new self::$controller($cpf);
             $controller->{self::$action}();
         } else {
             if (!self::$errorCallback) { // 未设置错误页面

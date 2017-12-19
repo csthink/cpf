@@ -5,7 +5,7 @@
  * @since: 12/16/2017 4:23 PM
  */
 
-use cpf\Router;
+use framework\Router;
 
 Router::get('/', 'app\\controllers\\IndexController@index');
 
