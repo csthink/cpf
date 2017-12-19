@@ -5,16 +5,14 @@
  * @since: 12/16/2017 4:18 PM
  */
 
-//use cpf\Request;
-
 final class CPF
 {
     CONST VERSION = '1.0.20171216';
 
     private static $instance;
 
-    public $request;
-    public $response;
+    private $request;
+    private $response;
     private $router;
     private $logger;
 
@@ -97,6 +95,8 @@ final class CPF
         if (file_exists($router_file)) {
             // 加载模块的路由规则
             require_once $router_file;
+        } else {
+            throw new Exception($router_file . ' is not exist');
         }
 
         $this->router->dispatch($this);

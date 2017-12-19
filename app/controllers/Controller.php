@@ -14,7 +14,7 @@ class Controller
 
     public function __construct(\CPF $cpf)
     {
-        $this->request = $cpf->request;
-        $this->response = $cpf->response;
+        $this->request = $cpf->getRequest();
+        $this->response = $cpf->getResponse();
     }
 }
