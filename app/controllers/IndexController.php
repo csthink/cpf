@@ -16,6 +16,10 @@ class IndexController extends Controller
 //        $user = new User();
 //        p($user->getData());
 //        p($this->request->get('name', 'jack'));
-        echo 'welcome to CPF';
+//        echo 'welcome to CPF';
+        $this->assign('name', 'Twig');
+        $this->assign('age', 18);
+        $this->assign('sex', 'male');
+        $this->display('test/index');
     }
 }

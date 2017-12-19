@@ -12,6 +12,7 @@ if ('admin.csthink.com' == $_SERVER['SERVER_NAME'] || 'www.admin.csthink.com' ==
 }
 $moduleName = $moduleName ? $moduleName : $defaultModuleNmae;
 
+//define('DEBUG', false); // 生产模式
 define('DEBUG', true); // 调式模式
 define('CSTHINK_PATH', realpath(__DIR__ . '/../') . '/'); // 根目录
 define('PUBLIC_PATH', CSTHINK_PATH . '/public/'); // 公共资源目录

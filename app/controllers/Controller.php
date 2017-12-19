@@ -7,8 +7,12 @@
 
 namespace app\controllers;
 
+use Framework\View;
+
 class Controller
 {
+    use View;
+
     protected $request;
     protected $response;
 
