@@ -11,7 +11,7 @@ server {
     listen 80;
     server_name www.csthink.com csthink.com;
     charset utf-8;
-    root /web/html/csthink/public;
+    root /web/html/cpf/public;
     index index.html index.htm index.php;
     autoindex off;
     
