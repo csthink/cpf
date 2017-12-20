@@ -5,7 +5,6 @@ csthink cpf framework
 修改composer.json文件后，记得执行 composer dump-autoload
 
 # nginx
-
 ```shell
 server {
     listen 80;
