@@ -2,10 +2,10 @@
 /**
  * @desc Created by PhpStorm.
  * @author: csthink
- * @since: 12/19/2017 5:21 PM
+ * @since: 12/20/2017 2:08 PM
  */
 
-namespace app\controllers;
+namespace framework;
 
 use Framework\View;
 

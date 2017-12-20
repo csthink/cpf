@@ -23,8 +23,10 @@ trait View
             $loader = new \Twig_Loader_Filesystem(MODULE_PATH . 'views');
             $twig = new \Twig_Environment($loader, array(
                 'cache' => MODULE_PATH . 'log/twig_cache',
-//                'debug' => DEBUG,
+                'debug' => DEBUG,
             ));
+
+            $twig->addExtension(new \Twig_Extension_Debug());
 
             echo $twig->render($file . '.html', $this->assign);
         } else {
