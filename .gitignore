@@ -23,5 +23,5 @@ $RECYCLE.BIN/
 /.settings
 /composer.lock
 /.buildpath
-/vendor
+#/vendor
 */log/
