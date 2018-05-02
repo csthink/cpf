@@ -48,11 +48,11 @@ function redirect($str)
 function cpf_Autoload($className)
 {
     $fileName = str_replace('\\', '/', trim($className, '\\')) . '.php';
-    if (is_file(FRAMEWORK_PATH . $fileName)) {
-        require FRAMEWORK_PATH . $fileName;
+    if (is_file(FRAMEWORK_PATH .'/'. $fileName)) {
+        require FRAMEWORK_PATH . '/' . $fileName;
     } else {
-        if (is_file(CSTHINK_PATH . $fileName)) {
-            require CSTHINK_PATH . $fileName;
+        if (is_file(CSTHINK_PATH . '/' . $fileName)) {
+            require CSTHINK_PATH . '/' . $fileName;
         }
     }
 

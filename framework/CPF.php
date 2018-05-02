@@ -17,9 +17,9 @@ final class CPF
     private $router;
     private $logger;
 
-    private $request_class = 'framework\\Request';
-    private $response_class = 'framework\\Response';
-    private $router_class = 'framework\\Router';
+    private $request_class = '\\framework\\Request';
+    private $response_class = '\\framework\\Response';
+    private $router_class = '\\framework\\Router';
 
     /**
      * @param string $request_class
@@ -92,7 +92,7 @@ final class CPF
         $this->response = new $this->response_class();
         $this->router = new $this->router_class();
 
-        $router_file = MODULE_PATH . 'config/Router.php';
+        $router_file = MODULE_PATH . '/config/Router.php';
         if (file_exists($router_file)) {
             // 加载模块的路由规则
             require_once $router_file;

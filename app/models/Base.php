@@ -16,7 +16,7 @@ class Base extends Model
     {
         parent::__construct($attributes);
         $capsule = new Capsule;
-        $capsule->addConnection(include MODULE_PATH . 'config/Database.php');
+        $capsule->addConnection(include MODULE_PATH . '/config/Database.php');
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
     }

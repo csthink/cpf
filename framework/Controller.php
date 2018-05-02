@@ -7,8 +7,6 @@
 
 namespace framework;
 
-use framework\View;
-
 class Controller
 {
     use View;
