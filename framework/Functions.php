@@ -47,19 +47,19 @@ function redirect($str)
  */
 function cpf_Autoload($className)
 {
-    $fileName = str_replace('\\', '/', trim($className, '\\')) . '.php';
-    if (is_file(FRAMEWORK_PATH .'/'. $fileName)) {
-        require FRAMEWORK_PATH . '/' . $fileName;
-    } else {
-        if (is_file(CSTHINK_PATH . '/' . $fileName)) {
-            require CSTHINK_PATH . '/' . $fileName;
-        }
-    }
-
-//    $fileName = CSTHINK_PATH . str_replace('\\', '/', trim($className, '\\')) . '.php';
-//    if (file_exists($fileName)) {
-//        require_once $fileName;
+//    $fileName = str_replace('\\', '/', trim($className, '\\')) . '.php';
+//    if (is_file(FRAMEWORK_PATH .'/'. $fileName)) {
+//        require FRAMEWORK_PATH . '/' . $fileName;
 //    } else {
-//        throw new Exception($fileName . ' is not exist');
+//        if (is_file(CSTHINK_PATH . '/' . $fileName)) {
+//            require CSTHINK_PATH . '/' . $fileName;
+//        }
 //    }
+
+    $fileName = CSTHINK_PATH . '/' . str_replace('\\', '/', trim($className, '\\')) . '.php';
+    if (file_exists($fileName)) {
+        require_once $fileName;
+    } else {
+        throw new Exception($fileName . ' is not exist');
+    }
 }

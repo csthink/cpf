@@ -86,6 +86,10 @@ final class CPF
         return self::$instance;
     }
 
+    /**
+     * 启动框架
+     * @throws Exception
+     */
     public function run()
     {
         $this->request = new $this->request_class();
@@ -96,10 +100,9 @@ final class CPF
         if (file_exists($router_file)) {
             // 加载模块的路由规则
             require_once $router_file;
+            $this->router->dispatch($this);
         } else {
             throw new Exception($router_file . ' is not exist');
         }
-
-        $this->router->dispatch($this);
     }
 }

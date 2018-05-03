@@ -93,6 +93,11 @@ class Request
      */
     private $requestId = '';
 
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
     public function __construct()
     {
         $this->serverParams = $_SERVER;

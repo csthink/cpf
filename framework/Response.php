@@ -9,9 +9,10 @@ namespace framework;
 
 class Response
 {
-    public function json($array)
+    public function json(array $array)
     {
         header('Content-Type:application/json; charset=utf-8');
-        echo json_encode($array);
+        echo json_encode($array, JSON_UNESCAPED_UNICODE);
+        exit;
     }
 }

@@ -25,9 +25,14 @@ class Router
     public static $controller = null;
     public static $action = null;
 
+    /**
+     * Roter::get() 或 Router::post()时调用
+     * @param $name
+     * @param $arguments
+     */
     public static function __callStatic($name, $arguments)
     {
-        $uri = strpos($arguments[0], '/') === 0 ? $arguments[0] : '/' . $arguments[0]; // URI 名
+        $uri = strpos($arguments[0], '/') !== false ? $arguments[0] : '/' . $arguments[0]; // URI 名称强制加斜线
         $callback = $arguments[1]; // 回调规则
 
         array_push(self::$routeList, $uri);
@@ -40,6 +45,10 @@ class Router
         self::$errorCallback = $callback;
     }
 
+    /**
+     * 路由分发
+     * @param \CPF $cpf
+     */
     public function dispatch(\CPF $cpf)
     {
         // 获取当前URI
@@ -50,7 +59,7 @@ class Router
         // 检查路由配置中已有配置
         if (in_array($uri, self::$routeList)) { // 路由已配置
             // 获取匹配的所有路由
-            $hitRoutes = array_keys(self::$routeList, $uri);
+            $hitRoutes = array_keys(self::$routeList, $uri); // 当前请求的uri命中的路由列表键
             foreach ($hitRoutes as $routeName) {
                 if ($method == self::$requestMethods[$routeName]) {
                     $rules = self::$callbacks[$routeName]; // 回调规则
@@ -58,7 +67,7 @@ class Router
                         call_user_func($rules);
                     } else { // 解析出控制器和方法
                         $data = explode('@', $rules);
-                        self::$controller = $data[0];
+                        self::$controller = MODULE_NAME . '\\controllers\\' . $data[0];
                         self::$action = $data[1];
                     }
                 }
@@ -76,10 +85,17 @@ class Router
                 if (is_object(self::$errorCallback)) {
                     call_user_func(self::$errorCallback);
                 } else {
+                    $data = explode('@', self::$errorCallback);
+                    self::$controller = MODULE_NAME . '\\controllers\\' . $data[0];
+                    self::$action = $data[1];
+                    $controller = new self::$controller($cpf);
+                    $controller->{self::$action}();
+                    /*
                     self::get($_SERVER['REQUEST_URI'], self::$errorCallback);
                     self::$errorCallback = null;
                     self::dispatch();
                     return;
+                    */
                 }
             }
         }
