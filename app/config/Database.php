@@ -6,8 +6,8 @@
  */
 return [
     'driver' => 'mysql',
-    'host' => '192.168.1.101',
-    'database' => 'csthink',
+    'host' => '127.0.0.1',
+    'database' => 'cpf',
     'username' => 'root',
     'password' => 'root',
     'charset' => 'utf8',

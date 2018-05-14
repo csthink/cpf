@@ -12,6 +12,6 @@
     "filp/whoops": "2.1.2",
     "symfony/var-dumper": "^3.2",
     "illuminate/database": "*",
-    "twig/twig": "^2.0"
+    "twig/twig": "*"
   }
 }

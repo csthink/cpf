@@ -22,7 +22,7 @@ trait View
         if (is_file($template)) {
             $loader = new \Twig_Loader_Filesystem(MODULE_PATH . '/views');
             $twig = new \Twig_Environment($loader, array(
-                'cache' => MODULE_PATH . '/log/twig_cache',
+                'cache' => MODULE_PATH . '/log/twig',
                 'debug' => DEBUG,
             ));
 
